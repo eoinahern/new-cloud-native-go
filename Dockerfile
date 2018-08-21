@@ -3,7 +3,7 @@ MAINTAINER eoin.ahern
 
 COPY  . ./github.com/eoinahern/new-cloud-native-go
 
-RUN cd ./github.com/eoinahern/new-cloud-native-go && CGO_ENABLE=0 go install
+RUN cd  github.com/eoinahern/new-cloud-native-go && CGO_ENABLE=0 go install
 
 ENV PORT 8080
 EXPOSE 8080

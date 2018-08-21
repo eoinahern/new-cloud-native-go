@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/eoinahern/new-cloud-native-go/api"
+	"new-cloud-native-go/api"
 )
 
 func main() {
