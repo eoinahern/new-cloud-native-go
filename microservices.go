@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"new-cloud-native-go/api"
+	"github.com/eoinahern/new-cloud-native-go/api"
 )
 
 func main() {
@@ -13,7 +13,9 @@ func main() {
 	http.HandleFunc("/api/echo", echo)
 	http.HandleFunc("/api/books", api.BooksHandleFunc)
 	http.HandleFunc("/api/books/", api.BookHandleFunc)
-	http.ListenAndServe(port(), nil)
+
+	fmt.Println("running .....")
+	http.ListenAndServe(":8080", nil)
 
 }
 
