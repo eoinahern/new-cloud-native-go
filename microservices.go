@@ -15,16 +15,18 @@ func main() {
 	http.HandleFunc("/api/books/", api.BookHandleFunc)
 
 	fmt.Println("running .....")
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(port(), nil)
 
 }
 
 func port() string {
 	port := os.Getenv("PORT")
 	if len(port) == 0 {
-		return "8080"
+		fmt.Println("no port found .....")
+		return ":8080"
 	}
 
+	fmt.Println(fmt.Sprintf("found port %s", port))
 	return ":" + port
 }
 

@@ -1,13 +1,14 @@
 FROM golang:1.7.4
 MAINTAINER eoin.ahern
 
-ENV SOURCES usr/local/go/src/github.com/eoinahern/new-cloud-native-go
+#ENV SOURCES github.com/eoinahern/new-cloud-native-go
 
-COPY  . ${SOURCES}
+COPY  ./new-cloud-native-go  /app/new-cloud-native-go
 
-RUN cd  ${SOURCES} && CGO_ENABLE=0 go install
+
+RUN  cd /app/new-cloud-native-go && go install
 
 ENV PORT 8080
 EXPOSE 8080
 
-ENTRYPOINT new-cloud-native-go
+ENTRYPOINT /app/new-cloud-native-go
